@@ -80,28 +80,57 @@ else{
 // Použij .include() nad zadaným slovem. Vypiš do konzole.
  
 
- 
+ /*
 let slovo = prompt("zadejte slovo");
 let pismenka = slovo.length;
 console.log(pismenka);
 let a=0;
 let e=0;
-
+*/
 
 
  
 
  
 /*****************************************************************/
+ /*
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("PrvocisloForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const number = parseInt(document.getElementById("prvocislo").value);
+        let x=2;
+        let y=0;
+        for(let i=2; i<=Math.sqrt(number); i++) {
+            if(number%i===0) {
+                y=y+1;
+                break;
+            }}
+        if(y==0) {
+            result = "Číslo je prvočíslo.";
+        }
+        else {
+            result = "Číslo není prvočíslo.";
+        }
+        document.getElementById("result-prvocisla").textContent = result;
  
-// 6️⃣ Zjisti, zda zadané číslo je prvočíslo
- 
-/**
- 
-* Požádej uživatele o číslo. Pomocí ternárního operátoru zjisti,
- 
-* zda je číslo prvočíslo či nikoliv.
- 
+    });
+});
+
 */
- 
-// zde bude tvoje řešení
+
+let cislo = prompt("zadejte cislo:");
+console.log(jePrvocislo(cislo));
+
+
+function jePrvocislo(cislo)
+{
+    if (cislo<=1) return "Číslo musí být větší než 1.";
+    if (cislo === 2 || cislo === 3) return "Číslo je prvočíslo.";
+
+    for (let i=2; i<=Math.sqrt(cislo);i++)//taky by šlo to číslo bez odmocniny
+    {
+        if(cislo % i === 0)
+            return "Číslo není prvočíslo";
+    }
+    return "Číslo je prvočíslo."
+}
