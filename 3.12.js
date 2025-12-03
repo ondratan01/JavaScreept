@@ -48,5 +48,5 @@ while(cislo !== 0)
     console.log("lichych je", lichy);
     console.log("prumer je", prumer);
 }
-    addEventListener("click", funkce);
+    //addEventListener("click", funkce);
 

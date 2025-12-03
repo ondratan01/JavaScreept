@@ -1,8 +1,8 @@
-console.log("Hello, World!"); // Standardní způsob
+/*console.log("Hello, World!"); // Standardní způsob
 console.warn("Hello, World!"); // Varování
 console.table(["Hello, World!"]); // Tablované zobrazení
 console.info("Hello, World!"); // Informace
-console.error("Hello, World!");
+console.error("Hello, World!");*/
 
 /*****************************************************************
  
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 */
-
+/*
 let cislo = prompt("zadejte cislo:");
 console.log(jePrvocislo(cislo));
 
@@ -133,4 +133,10 @@ function jePrvocislo(cislo)
             return "Číslo není prvočíslo";
     }
     return "Číslo je prvočíslo."
+}*/
+
+document.getElementById("btnAlert").addEventListener("click", funkce);
+function funkce()
+{
+    console.log("cau");
 }
