@@ -167,14 +167,14 @@ function validateCreditCard(num)
 // zde bude vaše řešení
 function minifyCSS(css) 
 {
-    // 1) odstranění komentářů /* ... */
+    
     let result = css.replace(/\/\*[\s\S]*?\*\//g, "");
 
-    // 2) odstranění zbytečných whitespace
+    
     result = result
-        .replace(/\s+/g, " ")     // vícenásobné mezery → jedna
-        .replace(/\s*([{}:;,])\s*/g, "$1") // mezery kolem {},:;,
-        .trim(); // odstraní mezery na začátku/konce
+        .replace(/\s+/g, " ")     
+        .replace(/\s*([{}:;,])\s*/g, "$1") 
+        .trim(); 
 
     return result;
 }
