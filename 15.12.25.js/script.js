@@ -120,7 +120,24 @@ function cleanText(text) {
  * ----------------------------------------------------------- */
 
 // zde bude vaše řešení
+function parseCSV(csv) 
+{
+    const regex = /"([^"]*)"/g;
+    const rows = csv.trim().split('\n');
+    const result = [];
+    for (let row of rows)
+    {
+        const cols = [];
+        let match;
+        while ((match = regex.exec(row)) !== null)
+            {
+            cols.push(match[1]);
+            }
 
+        result.push(cols);
+    }
+    return result;
+}
 
 /* -----------------------------------------------------------
  * Úloha 77: Validace kreditní karty
@@ -131,7 +148,12 @@ function cleanText(text) {
  * ----------------------------------------------------------- */
 
 // zde bude vaše řešení
-
+function validateCreditCard(num)
+{
+    const clean = num.replace(/\s+/g, "");
+    const regex = /^(4\d{15}|5\d{15})$/;
+    return regex.test(clean);
+}
 
 /* -----------------------------------------------------------
  * Úloha 78: Minifikace CSS
@@ -143,7 +165,19 @@ function cleanText(text) {
  * ----------------------------------------------------------- */
 
 // zde bude vaše řešení
+function minifyCSS(css) 
+{
+    // 1) odstranění komentářů /* ... */
+    let result = css.replace(/\/\*[\s\S]*?\*\//g, "");
 
+    // 2) odstranění zbytečných whitespace
+    result = result
+        .replace(/\s+/g, " ")     // vícenásobné mezery → jedna
+        .replace(/\s*([{}:;,])\s*/g, "$1") // mezery kolem {},:;,
+        .trim(); // odstraní mezery na začátku/konce
+
+    return result;
+}
 
 /* -----------------------------------------------------------
  * Úloha 79: Analyzátor logů
